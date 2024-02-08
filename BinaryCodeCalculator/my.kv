@@ -1,0 +1,121 @@
+<Calculate>:
+    BoxLayout:
+        padding: 40
+        orientation: 'vertical'
+        Label:
+            text: 'Найти двоичный код числа'
+            font_size: 30
+            size_hint: 1, 0.1
+            color: 1, 1, 1, 1
+        Label:
+            id: text_calc
+            text: "0"
+            font_size: 30
+            size_hint: 1, 0.1
+        GridLayout:
+            cols: 3
+            size_hint: 1, 0.4
+            padding: 0, 0, 0, 40
+            Button:
+                text: '7'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.add_number(self)
+            Button:
+                text: '8'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.add_number(self)
+            Button:
+                text: '9'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.add_number(self)
+            Button:
+                text: '4'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.add_number(self)
+            Button:
+                text: '5'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.add_number(self)
+            Button:
+                text: '6'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.add_number(self)
+            Button:
+                text: '1'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.add_number(self)
+            Button:
+                text: '2'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.add_number(self)
+            Button:
+                text: '3'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.add_number(self)
+            Widget:
+                size_hint: 0.2, 0.2
+            Button:
+                text: '0'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.add_number(self)
+            Button:
+                text: 'X'
+                size_hint: 0.2, 0.2
+                background_color: 0, 0, 0, 1
+                color: 1, 1, 1, 1
+                on_press: root.remove_number()
+        Button:
+            text: 'Вычеслить'
+            size_hint: 1, 0.1
+            background_color: 0, 0, 0, 1
+            color: 1, 1, 1, 1
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'results'
+                root.get_the_binary_code()
+
+<Results>:
+    BoxLayout:
+        size_hint: 1, 1
+        orientation: 'vertical'
+        padding: 40
+        Widget:
+            size_hint: 1, 0.4
+        Label:
+            text: 'Результаты:'
+            font_size: 30
+            size_hint: 1, 0.2
+        Label:
+            id: results_text
+            font_size: 45
+            size_hint: 1, 0.2
+        Widget:
+            size_hint: 1, 0.4
+        Button:
+            text: "Назад"
+            size_hint: 1, 0.2
+            background_color: 0, 0, 0, 1
+            color: 1, 1, 1, 1
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'main'
